@@ -1,0 +1,41 @@
+version: '2.2'
+services:
+  eureka6001:# 默认情况下，其他服务可以使用服务名称连接到该服务。
+  #因此，对于peer2的节点，它需要连接http://peer1:8761/eureka/，因此需要配置该服务的名称是peer1。
+    
+    image: springboot/springcloud-test:latest
+    container_name: eureka-server-eureka6001
+    hostname: eureka6001
+    networks:
+      - eureka-net
+    ports:
+      - 6001:6001
+    environment:
+      - spring.profiles.active=eureka6001
+
+  eureka6002:
+    image: springboot/springcloud-test:latest
+    container_name: eureka-server-eureka6002
+    hostname: eureka6002
+    networks:
+      - eureka-net
+    ports:
+      - 6002:6002
+    environment:
+      - spring.profiles.active=eureka6002
+    
+  eureka6003:
+    image: springboot/springcloud-test:latest
+    container_name: eureka-server-eureka6003
+    hostname: eureka6003
+    networks:
+      - eureka-net
+    ports:
+      - 6003:6003
+    environment:
+      - spring.profiles.active=eureka6003
+      
+
+networks:
+  eureka-net:
+    driver: bridge

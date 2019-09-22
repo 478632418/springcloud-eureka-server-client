@@ -1,0 +1,53 @@
+#spring:
+ # application:
+ #   name: eureka-server
+
+#security:
+ # basic:
+  #  enabled: true  #eureka用户是否认证
+  #user:
+  #  name: test
+  #  password: test
+
+--- #注意这里是三个"减号"
+spring:
+  profiles: eureka6001     # 指定profile=Eureka6001
+server:
+  port: 6001
+eureka:
+  instance:
+    hostname: localhost        # 指定当profile=6001时，主机名是localhost
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    serviceUrl:
+      defaultZone: http://localhost:6002/eureka/,http://localhost:6003/eureka/      # 将自己注册到6002,6003的Eureka上面去
+
+--- #注意这里是三个"减号"
+spring:
+  profiles: eureka6002     # 指定profile=Eureka6002
+server:
+  port: 6002
+eureka:
+  instance:
+    hostname: localhost        # 指定当profile=6001时，主机名是localhost
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    serviceUrl:
+      defaultZone: http://localhost:6001/eureka/,http://localhost:6003/eureka/      # 将自己注册到6001,6003的Eureka上面去
+
+--- #注意这里是三个"减号"
+spring:
+  profiles: eureka6002     # 指定profile=Eureka6002
+server:
+  port: 6002
+eureka:
+  instance:
+    hostname: localhost        # 指定当profile=6001时，主机名是localhost
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    serviceUrl:
+      defaultZone: http://localhost:6001/eureka/,http://localhost:6002/eureka/      # 将自己注册到6001,6002的Eureka上面去
+ 

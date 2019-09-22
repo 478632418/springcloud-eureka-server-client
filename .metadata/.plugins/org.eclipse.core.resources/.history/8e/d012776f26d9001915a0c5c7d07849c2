@@ -1,0 +1,36 @@
+spring:
+   application:
+      name: spring-cloud-producer
+eureka:
+   client:
+      service-url:
+         defaultZone: http://slave1:8761/eureka/,http://slave2:8762/eureka/,http://slave3:8763/eureka/
+
+info:
+  app:
+    name: ${spring.application.name}
+    description: Spring-Cloud-Producer
+    version: 1.0.0
+
+---
+server:
+  port: 7761
+eureka:
+  instance:
+    hostname: slave1
+
+---
+server:
+  port: 7762
+eureka:
+  instance:
+    hostname: slave2
+
+
+---
+server:
+  port: 7763
+eureka:
+  instance:
+    hostname: slave3
+    

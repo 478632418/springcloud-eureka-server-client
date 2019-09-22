@@ -1,0 +1,11 @@
+package org.product.controller;
+
+@RestController
+public class DemoController {
+ 
+    @RequestMapping("/demo")
+    public String demo(@RequestParam String message) {
+        return String.format("producer produce message:%s", message);
+    }
+
+}

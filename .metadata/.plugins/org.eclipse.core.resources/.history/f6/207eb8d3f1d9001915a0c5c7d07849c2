@@ -1,0 +1,28 @@
+spring:
+   application:
+      name: spring-cloud-consumer
+eureka:
+   client:
+      service-url:
+         defaultZone: http://slave1:8761/eureka/,http://slave2:8762/eureka/,http://slave3:8763/eureka/
+   instance:
+      preferIpAddress: true
+info:
+   app:
+      name: ${spring.application.name}
+      description: Spring-Cloud-Consumer
+      version: 1.0.0
+      build.artifactId: $project.artifactId$
+      build.version: $project.version$
+#取消Ribbon使用Eureka
+ribbon:
+   eureka:
+      enabled: true
+---
+spring:
+   profiles: slave1
+server:
+   port: 6761
+eureka:
+   instance:
+      hostname: slave1

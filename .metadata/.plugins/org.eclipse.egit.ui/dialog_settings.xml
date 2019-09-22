@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<list key="EGit.KnownHosts">
+		<item value="bitbucket.org"/>
+		<item value="github.com"/>
+		<item value="git.eclipse.org"/>
+		<item value="git.bingsheng.tech"/>
+	</list>
+	<list key="RepositorySelectionPage.UsedUris">
+		<item value="http://git.bingsheng.tech/phoenix/asia.git"/>
+	</list>
+</section>

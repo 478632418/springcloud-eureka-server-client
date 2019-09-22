@@ -1,0 +1,23 @@
+package org.consumer;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+
+/**
+ * Hello world!
+ *
+ */
+@SpringBootApplication
+@EnableEurekaClient
+public class App {
+	public static void main(String[] args) {
+		System.out.println("Hello World!");
+		SpringApplication.run(App.class, args);
+	}
+	 @Bean
+	 19     @LoadBalanced
+	 20     RestTemplate restTemplate() {
+	 21         return new RestTemplate();
+	 22     }
+}

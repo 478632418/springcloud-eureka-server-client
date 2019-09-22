@@ -1,0 +1,41 @@
+version: '2.2'
+services:
+  eureka6001:
+    image: springboot/springcloud-test:latest
+    container_name: eureka-server-eureka6001
+    hostname: localhost
+    networks:
+      - eureka-net
+    ports:
+      - 6001:6001
+    environment:
+      - spring.profiles.active=eureka6001
+      
+
+
+  eureka6002:
+    image: springboot/springcloud-test:latest
+    container_name: eureka-server-eureka6002
+    hostname: localhost
+    networks:
+      - eureka-net
+    ports:
+      - 6002:6001
+    environment:
+      - spring.profiles.active=eureka6002
+    
+  eureka6003:
+    image: springboot/springcloud-test:latest
+    container_name: eureka-server-eureka6003
+    hostname: localhost
+    networks:
+      - eureka-net
+    ports:
+      - 6003:6001
+    environment:
+      - spring.profiles.active=eureka6003
+      
+
+networks:
+  eureka-net:
+    driver: bridge

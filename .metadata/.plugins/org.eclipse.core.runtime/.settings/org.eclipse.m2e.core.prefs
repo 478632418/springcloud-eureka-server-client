@@ -1,0 +1,8 @@
+eclipse.m2.defaultRuntime=apache-maven-3.6.2
+eclipse.m2.downloadSources=false
+eclipse.m2.globalSettingsFile=/opt/apache-maven-3.6.2/conf/settings.xml
+eclipse.m2.runtimes=apache-maven-3.6.2
+eclipse.m2.runtimesNodes/apache-maven-3.6.2/location=/opt/apache-maven-3.6.2
+eclipse.m2.runtimesNodes/apache-maven-3.6.2/type=EXTERNAL
+eclipse.m2.userSettingsFile=/opt/apache-maven-3.6.2/conf/settings.xml
+eclipse.preferences.version=1
